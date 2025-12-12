@@ -1,0 +1,29 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* 
+       LIGHT MODE FIX: 
+       - Background is slightly off-white (zinc-50) for depth.
+       - Text is Zinc-900 (Rich Black) for crisp readability.
+       - Font aliasing (antialiased) makes letters thinner, so we use darker colors to compensate.
+    */
+    @apply bg-[#FAFAFA] dark:bg-[#050505] text-zinc-900 dark:text-zinc-200 transition-colors duration-300 antialiased font-sans selection:bg-black selection:text-white dark:selection:bg-blue-500 dark:selection:text-white;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Premium Card Hover Effect */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
