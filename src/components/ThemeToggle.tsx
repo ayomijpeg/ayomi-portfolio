@@ -1,9 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export const ThemeToggle = () => {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    if (typeof window === 'undefined') return 'dark';
+    return (localStorage.getItem('theme') as 'dark' | 'light') || 'dark';
+  });
+
+  const isFirst = useRef(true);
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -11,7 +16,10 @@ export const ThemeToggle = () => {
     } else {
       document.documentElement.classList.remove('dark');
     }
-    localStorage.setItem('theme', theme);
+    if (!isFirst.current) {
+      localStorage.setItem('theme', theme);
+    }
+    isFirst.current = false;
   }, [theme]);
 
   return (
@@ -23,8 +31,13 @@ export const ThemeToggle = () => {
       <motion.div
         initial={false}
         animate={{ rotate: theme === 'dark' ? 0 : 180 }}
+        transition={{ duration: 0.3 }}
       >
-        {theme === 'dark' ? <Moon size={20} className="text-white" /> : <Sun size={20} className="text-orange-500" />}
+        {theme === 'dark' ? (
+          <Moon size={20} className="text-white" />
+        ) : (
+          <Sun size={20} className="text-orange-500" />
+        )}
       </motion.div>
     </button>
   );
