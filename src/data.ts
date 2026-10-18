@@ -5,8 +5,8 @@
 
 export const profile = {
   name: "OPEYEMI AYOMIDE",
-  role: "Full Stack Engineer",
-  roleVariants: ["Full Stack Engineer", "Frontend-Heavy Developer", "React & Next.js Specialist"],
+  role: "Software Developer",
+  roleVariants: ["Software Developer", "Web Applications Developer", "React & Next.js Specialist"],
   email: "ayomitomiwa53@gmail.com",
   phone: "+2348103506816",
   whatsapp: "https://wa.me/2348103506816",
@@ -14,7 +14,7 @@ export const profile = {
   linkedin: "https://linkedin.com/in/opeyemi-ayomide",
   github: "https://github.com/ayomijpeg",
   avatarUrl: "https://avatars.githubusercontent.com/u/107340296?v=4",
-  bio: "Full Stack Engineer with 4+ years building production-grade web apps. I specialize in React, Next.js, and TypeScript on the frontend, and reach into Node.js, Prisma, and PostgreSQL when the feature demands it. Currently leading frontend development on Yosola Schools — a live SaaS platform serving 447+ users.",
+  bio: "Software Developer with 4+ years building production-grade web applications. I specialize in React, Next.js, and TypeScript, backed by solid backend experience with Node.js, Prisma, and PostgreSQL. Currently leading frontend development on Yosola Schools — a live SaaS platform serving 447+ users.",
   stats: [
     { label: "Years Experience", value: "4+" },
     { label: "Active SaaS Users", value: "447+" },
@@ -63,8 +63,8 @@ export type Experience = {
 export const experience: Experience[] = [
   {
     role: "Frontend Engineer Intern",
-    company: "Gllidex Technologies",
-    period: "Oct 2025 – Present",
+    company: "Glidex Technologies",
+    period: "Oct 2025 – Apr 2026",
     type: "Remote",
     description: "Driving frontend development cycles with a focus on high-performance interfaces and scalable design patterns.",
     achievements: [
